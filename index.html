@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link rel="stylesheet" href="estilo.css">
+	<title>AEV-NSP</title>
+</head>
+<body>
+	<main class="main-container">
+		<section class="main-section">
+			<header class="header">
+				<img class="logo" src="./img/nsplogo.png">
+				<h2>ANALISIS DE ESTILO DE VIDA</h2>
+			</header>
+			<aside class="progress">
+				<h2 class="progress__title">Completado</h2>
+				<!-- circular progress bar -->
+				<div class="circular-progress">
+					<div class="value-container"></div>
+				</div>
+				<!-- linear progress bar -->
+				<div class="linear-progress">
+					<div class="linear-value-container"></div>
+				</div>
+			</aside>
+		
+			<form id="formulario" action="" class="fomulario">
+		
+				<div class="contenedor-pregunta">
+					<div class="number">1</div>
+					<p class="pregunta">Se siente frecuentemente débil y/o cansado.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta1" id="p1" ><label for="p1">SI</label>
+						<input type="radio" name="pregunta1" id="p2" ><label for="p2">NO</label>
+					</div>
+				</div>
+		
+				<div class="contenedor-pregunta">
+					<div class="number">2</div>
+					<p class="pregunta">Se enferma frecuentemente.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta2" id="p3" ><label for="p3">SI</label>
+						<input type="radio" name="pregunta2" id="p4" ><label for="p4">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">3</div>
+					<p class="pregunta">Tiene mal olor corporal o mal aliento.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta3" id="p5" ><label for="p5">SI</label>
+						<input type="radio" name="pregunta3" id="p6" ><label for="p6">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">4</div>
+					<p class="pregunta">Siente dificultad al digerir cierto tipo de alimentos.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta4" id="p7" ><label for="p7">SI</label>
+						<input type="radio" name="pregunta4" id="p8" ><label for="p8">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">5</div>
+					<p class="pregunta">Consume frecuentemente carnes rojas.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta5" id="p9" ><label for="p9">SI</label>
+						<input type="radio" name="pregunta5" id="p10" ><label for="p10">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">6</div>
+					<p class="pregunta">Padece de síndrome pre-menstrual o menopausia.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta6" id="p11" ><label for="p11">SI</label>
+						<input type="radio" name="pregunta6" id="p12" ><label for="p12">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">7</div>
+					<p class="pregunta">Usa frecuentemente antibióticos.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta7" id="p13" ><label for="p13">SI</label>
+						<input type="radio" name="pregunta7" id="p14" ><label for="p14">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">8</div>
+					<p class="pregunta">Consume alcohol regularmente.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta8" id="p15" ><label for="p15">SI</label>
+						<input type="radio" name="pregunta8" id="p16" ><label for="p16">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">9</div>
+					<p class="pregunta">Tiene bolsas debajo de los ojos o pies hinchados.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta9" id="p17" ><label for="p17">SI</label>
+						<input type="radio" name="pregunta9" id="p18" ><label for="p18">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">10</div>
+					<p class="pregunta">Es fumador activo o pasivo.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta10" id="p19" ><label for="p19">SI</label>
+						<input type="radio" name="pregunta10" id="p20" ><label for="p20">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">11</div>
+					<p class="pregunta">Sufre de falta de concentración o memoria.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta11" id="p21" ><label for="p21">SI</label>
+						<input type="radio" name="pregunta11" id="p22" ><label for="p22">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">12</div>
+					<p class="pregunta">Se recupera con dificultad de las enfermedades.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta12" id="p23" ><label for="p23">SI</label>
+						<input type="radio" name="pregunta12" id="p24" ><label for="p24">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">13</div>
+					<p class="pregunta">Eructa o tiene gases después de las comidas.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta13" id="p25" ><label for="p25">SI</label>
+						<input type="radio" name="pregunta13" id="p26" ><label for="p26">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">14</div>
+					<p class="pregunta">Se siente estresado frecuentemente.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta14" id="p27" ><label for="p27">SI</label>
+						<input type="radio" name="pregunta14" id="p28" ><label for="p28">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">15</div>
+					<p class="pregunta">Sufre de alergias y/o afecciones en la piel (acné, erupciones).</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta15" id="p29" ><label for="p29">SI</label>
+						<input type="radio" name="pregunta15" id="p30" ><label for="p30">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">16</div>
+					<p class="pregunta">Siente antojos por alimentos dulces y/o alimentos procesados (embutidos).</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta16" id="p31" ><label for="p31">SI</label>
+						<input type="radio" name="pregunta16" id="p32" ><label for="p32">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">17</div>
+					<p class="pregunta">Consume productos lácteos regularmente.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta17" id="p33" ><label for="p33">SI</label>
+						<input type="radio" name="pregunta17" id="p34" ><label for="p34">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">18</div>
+					<p class="pregunta">Se siente frecuentemente preocupado, ansioso o deprimido.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta18" id="p35" ><label for="p35">SI</label>
+						<input type="radio" name="pregunta18" id="p36" ><label for="p36">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">19</div>
+					<p class="pregunta">Siente poco sueño / sueño inquieto.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta19" id="p37" ><label for="p37">SI</label>
+						<input type="radio" name="pregunta19" id="p38" ><label for="p38">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">20</div>
+					<p class="pregunta">Sus uñas son quebradizas / se parten en capas.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta20" id="p39" ><label for="p39">SI</label>
+						<input type="radio" name="pregunta20" id="p40" ><label for="p40">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">21</div>
+					<p class="pregunta">Su cabello se parte en las puntas o se cae.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta21" id="p41" ><label for="p41">SI</label>
+						<input type="radio" name="pregunta21" id="p42" ><label for="p42">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">22</div>
+					<p class="pregunta">Su dieta es alta en grasas o en colesterol.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta22" id="p43" ><label for="p43">SI</label>
+						<input type="radio" name="pregunta22" id="p44" ><label for="p44">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">23</div>
+					<p class="pregunta">Sufre de nerviosismo, ansiedad o tensión.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta23" id="p45" ><label for="p45">SI</label>
+						<input type="radio" name="pregunta23" id="p46" ><label for="p46">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">24</div>
+					<p class="pregunta">Su dieta es baja en fibras (verduras, frutas, cereales, legumbres).</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta24" id="p47" ><label for="p47">SI</label>
+						<input type="radio" name="pregunta24" id="p48" ><label for="p48">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">25</div>
+					<p class="pregunta">Sufre de calambres musculares</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta25" id="p49" ><label for="p49">SI</label>
+						<input type="radio" name="pregunta25" id="p50" ><label for="p50">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">26</div>
+					<p class="pregunta">Está expuesto a contaminación ambiental. </p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta26" id="p51" ><label for="p51">SI</label>
+						<input type="radio" name="pregunta26" id="p52" ><label for="p52">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">27</div>
+					<p class="pregunta">Permanece con sueño a cualquier hora del día. </p>
+					<div class="separador"></div>
+					<div class="respuesta">
+									<input type="radio" name="pregunta27" id="p53" ><label for="p53">SI</label>
+						<input type="radio" name="pregunta27" id="p54" ><label for="p54">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">28</div>
+					<p class="pregunta">Consume mucho café, té o gaseosas oscuras “colas”.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta28" id="p55" ><label for="p55">SI</label>
+						<input type="radio" name="pregunta28" id="p56" ><label for="p56">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">29</div>
+					<p class="pregunta">Su carácter es explosivo: pierde el control fácilmente.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta29" id="p57" ><label for="p57">SI</label>
+						<input type="radio" name="pregunta29" id="p58" ><label for="p58">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">30</div>
+					<p class="pregunta">Es sensible a ciertos alimentos o productos químicos.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta30" id="p59" ><label for="p59">SI</label>
+						<input type="radio" name="pregunta30" id="p60" ><label for="p60">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">31</div>
+					<p class="pregunta">Tiene molestias al consumir harinas blancas.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+							<input type="radio" name="pregunta31" id="p61" ><label for="p61">SI</label>
+						<input type="radio" name="pregunta31" id="p62" ><label for="p62">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">32</div>
+					<p class="pregunta">Siente debilidad, dolor en huesos y músculos.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+								<input type="radio" name="pregunta32" id="p63" ><label for="p63">SI</label>
+						<input type="radio" name="pregunta32" id="p64" ><label for="p64">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">33</div>
+					<p class="pregunta">Vive con preocupaciones constantes o resentimientos guardados.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta33" id="p65" ><label for="p65">SI</label>
+						<input type="radio" name="pregunta33" id="p66" ><label for="p66">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">34</div>
+					<p class="pregunta">Es mal genio, se irrita con facilidad.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta34" id="p67" ><label for="p67">SI</label>
+						<input type="radio" name="pregunta34" id="p68" ><label for="p68">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">35</div>
+					<p class="pregunta">Hace poco ejercicio.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta35" id="p69" ><label for="p69">SI</label>
+						<input type="radio" name="pregunta35" id="p70" ><label for="p70">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">36</div>
+					<p class="pregunta">Presenta exceso de mucosidad (nariz y garganta).</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta36" id="p71" ><label for="p71">SI</label>
+						<input type="radio" name="pregunta36" id="p72" ><label for="p72">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="number">37</div>
+					<p class="pregunta">Sufre de dificultades urinarias.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta37" id="p73" ><label for="p73">SI</label>
+						<input type="radio" name="pregunta37" id="p74" ><label for="p74">NO</label>
+					</div>
+				</div>
+				<div class="contenedor-pregunta">
+					<div class="last-number">38</div>
+					<p class="pregunta">Tiene poco apetito.</p>
+					<div class="separador"></div>
+					<div class="respuesta">
+						<input type="radio" name="pregunta38" id="p75" ><label for="p75">SI</label>
+						<input type="radio" name="pregunta38" id="p76" ><label for="p76">NO</label>
+					</div>
+				</div>
+				<div class="button-container">
+					<input class="button" type="button" value="RESULTADO" onclick="resultado()"/>
+					<input class="button" type="button" value="REINICIAR " onclick="reiniciar()"/>
+				</div>
+			</form>
+		</section>
+		<aside class="sidebar">
+			<h3 class="sidebar__header">CRITERIOS DE CALIFICACION</h3>
+			<div class="result-container">
+				<h3>DIGESTIVO</h3>
+				<h3 class="Tresultado" id='resultadoD'></h3>
+			
+				<h3>INTESTINAL</h3>
+				<h3 class="Tresultado" id='resultadoI'></h3>
+			
+				<h3>CIRCULATORIO</h3>
+				<h3 class="Tresultado" id='resultadoC'></h3>
+			
+				<h3>NERVIOSO</h3>
+				<h3 class="Tresultado" id='resultadoN'></h3>
+			
+				<h3>INMUNOLOGICO</h3>
+				<h3 class="Tresultado" id='resultadoM'></h3>
+			
+				<h3>RESPIRATORIO</h3>
+				<h3 class="Tresultado" id='resultadoR'></h3>
+			
+				<h3>URINARIO</h3>
+				<h3 class="Tresultado" id='resultadoU'></h3>
+			
+				<h3>GLANDULAR</h3>
+				<h3 class="Tresultado" id='resultadoG'></h3>
+			
+				<h3>ESTRUCTURAL</h3>
+				<h3 class="Tresultado" id='resultadoE'></h3>
+				
+			</div>
+			<div class="export-container">
+				<input class="button" type="button" value="EXPORTAR" onclick="exportarPDF()"/>
+			</div>
+		</aside>
+	</main>
+
+	
+
+	
+
+	<footer class="footer">
+		<p><strong>Copyright &copy; 2022 <a href="https://www.naturessunshine.ec" target="_blank">Nature's Sunshine EC</a>.</strong></p>
+		<p>Todos los derechos reservados.</p>
+		<div class="social-container">
+			<a href="#"><img src="img/facebook.png" alt="facebook"></a>
+			<a href="#"><img src="img/youtube.png" alt="youtube"></a>
+			<a href="#"><img src="img/whatsapp.png" alt="whatsapp"></a>
+			<a href="#"><img src="img/instagram.png" alt="instagram"></a>
+		</div>
+	</footer>	
+
+
+	<script src="./jsPDF-1.3.2/dist/jspdf.min.js"></script>
+	<script src="./aev.js"></script>
+</body>
+</html>
