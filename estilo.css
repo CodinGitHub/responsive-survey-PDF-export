@@ -304,7 +304,7 @@ label{
   }
 }
 
-@media (max-width: 375px){
+@media (max-width: 460px){
   body{
     background-color: red;
   }
@@ -319,5 +319,18 @@ label{
   }
   .fomulario{
     padding: 0 20px;
+  }
+  .pregunta{
+    font-size: 0.9em;
+  }
+  input[type="radio"] + label:before {
+    width: 0.8em;
+    height: 0.8em;
+    
+  }
+  label{
+    font-size: 0.6em;
+    margin-right: 0px;
+    
   }
 }
