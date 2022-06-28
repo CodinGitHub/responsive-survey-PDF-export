@@ -606,10 +606,10 @@
 				</div>
 
 				<div class="button-container">
-					<input class="button" type="button" value="RESULTADO" onclick="resultado()"/>
+					<input id="resultBtn" class="button" type="button" value="RESULTADO"/>
 					<input id="resetBtn" class="button" type="button" value="REINICIAR"/>
 				</div>
-				
+
 			</form>
 		</section>
 		<aside class="sidebar">
@@ -649,10 +649,8 @@
 		</aside>
 	</main>
 
-	<!-- The Modal -->
+	<!-- Reset Modal -->
 	<div id="myModal" class="modal">
-
-		<!-- Modal content -->
 		<div class="modal-content">
 			<p>¿Seguro que quiere reiniciar?</p>
 			<div class="button-modal-container">
@@ -660,10 +658,17 @@
 				<button class="button-modal" id="cancelBtn">Cancelar</button>
 			</div>
 		</div>
-	
 	</div>
 
-	
+	<!-- Result Modal -->
+	<div id="resultModal" class="modal">
+		<div class="modal-content">
+			<p>Por favor contesta todas las preguntas</p>
+			<div class="button-modal-container">
+				<button class="button-modal" id="accepResultBtn">Aceptar</button>
+			</div>
+		</div>
+	</div>
 
 	<footer class="footer">
 		<p><strong>Copyright &copy; 2022 <a href="https://www.naturessunshine.ec" target="_blank">Nature's Sunshine EC</a>.</strong></p>

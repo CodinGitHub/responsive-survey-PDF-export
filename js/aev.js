@@ -336,28 +336,29 @@ function increaseProgressBar(answerCounter){
 	let porcentage = Math.floor((100 * answerCounter) / 38);
 	valueContainer.innerHTML = `${porcentage}<span>%</span>`
 	progressBar.style.background = `conic-gradient(#F68B32 ${porcentage*3.6}deg, #CACECF ${porcentage*3.6}deg)`;
-	// linearProgressBar.value = porcentage
+	linearProgressBar.value = porcentage
 	linearValueContainer.innerHTML = `${porcentage}<span>%</span>`
 }
 
 valueContainer.innerHTML = `${answerCounter}<span> %</span>`
 
-function resultado(){
+
+// Modal de resultado
+let resultBtn = document.getElementById('resultBtn');
+let accepResultBtn = document.getElementById("accepResultBtn");
+
+resultBtn.addEventListener('click', ()=>{
 	if(answerCounter.length >= 1){
 		calculate();
 	}else{
-		main.innerHTML = `
-		<div id="myModal" class="modal">
-		<div class="modal-content">
-			<p>Por favor contesta todas las preguntas</p>
-			<div class="button-modal-container">
-				<button class="button-modal" id="acceptBtn">Aceptar</button>
-			</div>
-		</div>
-	
-	</div>`
+		let resultModal = document.getElementById('resultModal');
+		resultModal.style.display = "block";
 	}
-}
+});
+
+accepResultBtn.addEventListener('click', ()=>{
+	resultModal.style.display = "none";
+});
 
 // Imprimir PDF
 

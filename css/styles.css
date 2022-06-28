@@ -18,6 +18,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
   background-color: var(--background);
   color: var(--letters);
+  padding: 0 20px;
 }
 .main-container{
   display: grid;
@@ -239,6 +240,10 @@ label{
   text-align: center;
   padding: 16px 0;
   font-size: 1em;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  /* bottom: 0; */
 }
 .Tresultado{
   color: var(--radio-buttons);
@@ -298,18 +303,19 @@ label{
     background-color: blue;
   }
   .main-container{
-    width: 95%;
+    /* width: 1%; */
     display: flex;
     flex-direction: column;
   }
   .sidebar{
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
+    max-height: 700px;
+    height: 600px;
   }
   label{
     font-size: 0.9em; 
     margin-right: 0px;
-    
   }
 }
 
@@ -329,6 +335,13 @@ label{
   }
   .radio-buttons-container{
     justify-content: space-between;
+  }
+  .sidebar{
+    height: 6 00px;
+  }
+  .button{
+    width: 150px;
+    letter-spacing: 2px;
   }
 }
 
@@ -353,6 +366,10 @@ label{
   .pregunta{
     font-size: 0.9em;
   }
+  .radio-buttons-container{
+    flex: 3;
+  }
+  
   .single-radio-buttons-container{
     /* display: flex; */
     /* flex-direction: column; */
@@ -371,5 +388,12 @@ label{
     top: -20px;
     left: 21px;
   }
-  
+  .button{
+    width: 130px;
+    
+  }
+  .separador{
+    margin-right: -10px;
+    margin-left: 5px;
+  }
 }
