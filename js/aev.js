@@ -344,19 +344,20 @@ function resultado(){
 	if(answerCounter.length >= 1){
 		calculate();
 	}else{
-		alert('Por favor contestar todas las preguntas.')
+		main.innerHTML = `
+		<div id="myModal" class="modal">
+		<div class="modal-content">
+			<p>Por favor contesta todas las preguntas</p>
+			<div class="button-modal-container">
+				<button class="button-modal" id="acceptBtn">Aceptar</button>
+			</div>
+		</div>
+	
+	</div>`
 	}
 }
 
 // Imprimir PDF
-
-function reiniciar(){
-	if(confirm('¿Seguro que quiere reiniciar?')){
-		location.reload();
-	}
-}
-
-
 
 function exportarPDF(){
 	// console.log(D);

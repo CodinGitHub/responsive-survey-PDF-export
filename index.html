@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-	<link rel="stylesheet" href="estilo.css">
+	<link rel="stylesheet" href="./css/modals.css">
+	<link rel="stylesheet" href="./css/estilo.css">
 	<title>AEV-NSP</title>
 </head>
 <body>
@@ -36,8 +37,12 @@
 					<p class="pregunta">Se siente frecuentemente débil y/o cansado.</p>
 					<div class="separador"></div>
 					<div class="respuesta">
-						<input type="radio" name="pregunta1" id="p1" ><label for="p1">SI</label>
-						<input type="radio" name="pregunta1" id="p2" ><label for="p2">NO</label>
+						<div>
+							<input type="radio" name="pregunta1" id="p1" ><label for="p1">SI</label>
+						</div>
+						<div>
+							<input type="radio" name="pregunta1" id="p2" ><label for="p2">NO</label>
+						</div>
 					</div>
 				</div>
 		
@@ -376,7 +381,7 @@
 				</div>
 				<div class="button-container">
 					<input class="button" type="button" value="RESULTADO" onclick="resultado()"/>
-					<input class="button" type="button" value="REINICIAR " onclick="reiniciar()"/>
+					<input id="resetBtn" class="button" type="button" value="REINICIAR"/>
 				</div>
 			</form>
 		</section>
@@ -417,7 +422,19 @@
 		</aside>
 	</main>
 
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<p>¿Seguro que quiere reiniciar?</p>
+			<div class="button-modal-container">
+				<button class="button-modal" id="acceptBtn">Aceptar</button>
+				<button class="button-modal" id="cancelBtn">Cancelar</button>
+			</div>
+		</div>
 	
+	</div>
 
 	
 
@@ -433,7 +450,8 @@
 	</footer>	
 
 
-	<script src="./jsPDF-1.3.2/dist/jspdf.min.js"></script>
-	<script src="./aev.js"></script>
+	<script src="./js/jspdf.min.js"></script>
+	<script src="./js/modals.js"></script>
+	<script src="./js/aev.js"></script>
 </body>
 </html>
