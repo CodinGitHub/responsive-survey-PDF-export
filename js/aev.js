@@ -319,6 +319,7 @@ let form = document.getElementById('formulario');
 let linearProgressBar = document.getElementById('prrogress-bar');
 let progressBar = document.querySelector('.circular-progress');
 let valueContainer = document.querySelector('.value-container');
+let linearValueContainer = document.querySelector('.linear-value-container');
 let answerCounter = 0;
 
 form.addEventListener('click', (event)=>{
@@ -335,7 +336,8 @@ function increaseProgressBar(answerCounter){
 	let porcentage = Math.floor((100 * answerCounter) / 38);
 	valueContainer.innerHTML = `${porcentage}<span>%</span>`
 	progressBar.style.background = `conic-gradient(#F68B32 ${porcentage*3.6}deg, #CACECF ${porcentage*3.6}deg)`;
-	linearProgressBar.value = porcentage
+	// linearProgressBar.value = porcentage
+	linearValueContainer.innerHTML = `${porcentage}<span>%</span>`
 }
 
 valueContainer.innerHTML = `${answerCounter}<span> %</span>`
