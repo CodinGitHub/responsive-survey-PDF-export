@@ -248,15 +248,40 @@ label{
 .Tresultado{
   color: var(--radio-buttons);
 }
-/*----------MODAL---------*/
+footer a{
+  text-decoration: none;
+  color: var(--questions-background);
+}
+footer .social-container{
+  width: 200px;
+  height: 40px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.social-container a{
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--letters);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.social-container a:hover{
+  background-color: var(--radio-buttons);
+}
+.social-container a img{
+  width: 60%;
+}
 
 
 
 /*---------------------Responsivo--------------------------------------*/
 @media (max-width: 1100px){
-  body{
-    background-color: yellow;
-  }
+
   .main-section{
     display: flex;
     flex-direction: column;
@@ -299,9 +324,7 @@ label{
 }
 
 @media (max-width: 920px){
-  body{
-    background-color: blue;
-  }
+
   .main-container{
     /* width: 1%; */
     display: flex;
@@ -320,9 +343,7 @@ label{
 }
 
 @media (max-width: 620px){
-  body{
-    background-color: red;
-  }
+
   .header{
     flex-direction: column;
     height: 90px;
@@ -346,9 +367,7 @@ label{
 }
 
 @media (max-width: 460px){
-  body{
-    background-color: purple;
-  }
+ 
   .progress{
     margin-bottom: 20px;
     padding: 15px 20px 0 0;
