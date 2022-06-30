@@ -1,328 +1,68 @@
 var D,I,C,N,M,R,U,G,E;
 
-function calculate() {
-	var p1, p2, p3, p4, p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,total;
-	var contadorLetras=1;
-	var unicasLetras=[];
-	var almacenadorVecesRepetidas=[];
-	
-	//-- 1ª pregunta -->
-	if (document.getElementById('p1').checked==true) {p1='DCMG'}
-		else{p1='  '} 
-
-	console.log("p1 " + p1);
-
-	//-- 2ª pregunta -->
-	if (document.getElementById('p3').checked==true) {p2='M'}
-		else{p2='  '}
-		console.log("p2 " +p2);
-
-	//-- 3ª pregunta -->
-	if (document.getElementById('p5').checked==true) {p3='DIRU'}
-		else{p3='  '}
-	// console.log(p3);
-	//-- 4ª pregunta -->
-	if (document.getElementById('p7').checked==true) {p4='DI'}
-		else{p4='  '}
-	// console.log(p4);
 
 
-	//-- 5ª pregunta -->
-	if (document.getElementById('p9').checked==true) {p5='DICU'}
-		else{p5='  '}
+let result = {
+	D: 0,
+	I: 0,
+	C: 0,
+	N: 0,
+	M: 0,
+	R: 0,
+	U: 0,
+	G: 0,
+	E: 0
+}
 
+let points = [
+	[1,0,1,0,1,0,0,1,0],
+	[0,0,0,0,1,0,0,0,0],
+	[1,1,0,0,0,1,1,0,0],
+	[1,0,0,0,1,0,0,0,0]
+]
 
-	if (document.getElementById('p11').checked==true) {p6='INUG'}
-		else{p6='  '}
+function sumLetters (array){
+	result.D = result.D + array[0]
+	result.I = result.I + array[1]
+	result.C = result.C + array[2]
+	result.N = result.N + array[3]
+	result.M = result.M + array[4]
+	result.R = result.R + array[5]
+	result.U = result.U + array[6]
+	result.G = result.G + array[7]
+	result.E = result.E + array[8]
+}
 
+showRestult()
 
-	if (document.getElementById('p13').checked==true) {p7='CMI'}
-		else{p7='  '}
+function showRestult() {
 
-	if (document.getElementById('p15').checked==true) {p8='ICNG'}
-		else{p8='  '}
+	console.log(calculateResultInWords(result.D))
 
-	if (document.getElementById('p17').checked==true) {p9='U'}
-		else{p9='  '}
+	document.getElementById('resultadoD').innerHTML = calculateResultInWords(result.D);
+	document.getElementById('resultadoI').innerHTML = calculateResultInWords(result.I);
+	document.getElementById('resultadoC').innerHTML = calculateResultInWords(result.C);
+	document.getElementById('resultadoN').innerHTML = calculateResultInWords(result.N);
+	document.getElementById('resultadoM').innerHTML = calculateResultInWords(result.M);
+	document.getElementById('resultadoR').innerHTML = calculateResultInWords(result.R);
+	document.getElementById('resultadoU').innerHTML = calculateResultInWords(result.U);
+	document.getElementById('resultadoG').innerHTML = calculateResultInWords(result.G);
+	document.getElementById('resultadoE').innerHTML = calculateResultInWords(result.E);
+}
 
-	if (document.getElementById('p19').checked==true) {p10='DNR'}
-		else{p10='  '}
-
-	if (document.getElementById('p21').checked==true) {p11='CNG'}
-		else{p11='  '}
-
-	if (document.getElementById('p23').checked==true) {p12='M'}
-		else{p12='  '}
-
-	if (document.getElementById('p25').checked==true) {p13='D'}
-		else{p13='  '}
-
-	if (document.getElementById('p27').checked==true) {p14='CNMG'}
-		else{p14='  '}
-
-	if (document.getElementById('p29').checked==true) {p15='DIUGE'}
-		else{p15='  '}
-
-	if (document.getElementById('p31').checked==true) {p16='NG'}
-		else{p16='  '}
-
-	if (document.getElementById('p33').checked==true) {p17='IU'}
-		else{p17='  '}
-
-
-	if (document.getElementById('p35').checked==true) {p18='IN'}
-		else{p18='  '}
-
-	if (document.getElementById('p37').checked==true) {p19='G'}
-		else{p19='  '}
-
-	if (document.getElementById('p39').checked==true) {p20='DE'}
-		else{p20='  '}
-
-	if (document.getElementById('p41').checked==true) {p21='DGE'}
-		else{p21='  '}
-
-
-	if (document.getElementById('p43').checked==true) {p22='DC'}
-		else{p22='  '}
-
-
-	if (document.getElementById('p45').checked==true) {p23='NG'}
-		else{p23='  '}
-
-
-	if (document.getElementById('p47').checked==true) {p24='I'}
-		else{p24='  '}
-	
-
-
-	if (document.getElementById('p49').checked==true) {p25='NE'}
-		else{p25='  '}
-
-
-	if (document.getElementById('p51').checked==true) {p26='MR'}
-		else{p26='  '}
-
-
-	if (document.getElementById('p53').checked==true) {p27='C'}
-		else{p27='  '}
-
-
-	if (document.getElementById('p55').checked==true) {p28='DNG'}
-		else{p28='  '}
-
-
-	if (document.getElementById('p57').checked==true) {p29='NMG'}
-		else{p29='  '}
-
-
-
-	if (document.getElementById('p59').checked==true) {p30='DIM'}
-		else{p30='  '}
-
-
-
-	if (document.getElementById('p61').checked==true) {p31='DIR'}
-		else{p31='  '}
-
-
-
-	if (document.getElementById('p63').checked==true) {p32='UE'}
-		else{p32='  '}
-
-
-	if (document.getElementById('p65').checked==true) {p33='DN'}
-		else{p33='  '}
-
-
-	if (document.getElementById('p67').checked==true) {p34='ING'}
-		else{p34='  '}
-
-
-	if (document.getElementById('p69').checked==true) {p35='ICME'}
-		else{p35='  '}
-
-
-
-	if (document.getElementById('p71').checked==true) {p36='R'}
-		else{p36='  '}
-
-
-	if (document.getElementById('p73').checked==true) {p37='IUG'}
-		else{p37='  '}
-
-
-	if (document.getElementById('p75').checked==true) {
-		p38='ING'
-	}else{
-		p38='  '
+function calculateResultInWords(number){
+	if(number>=0 && number<=1){
+		return "Muy buena salud"
 	}
-	total=p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p11+p12+p13+p14+p15+p16+p17+p18+p19+p20+p21+p22+p23+p24+p25+p26+p27+p28+p29+p30+p31+p32+p33+p34+p35+p36+p37+p38;
-	
-	console.log('todal: ' + total)
-
-	total= total.toUpperCase().replace(/ /g, "").split("").sort();
-	
-	console.log('todal: ' + total)
-
-	//console.log(total);
-
-	if(total.length != 0){
-		for(let i =0;i<total.length;i++){
-			if(total[i +1]===total[i]){
-				contadorLetras++;
-			}else{
-				unicasLetras.push(total[i]);
-				almacenadorVecesRepetidas.push(contadorLetras);
-				contadorLetras=1;
-			} 
-		}
-	}else{
-		
+	if(number>=2 && number<=3){
+		return "Buena salud"
 	}
-	
-
-	console.log('unicasLetras: ' + unicasLetras);
-	console.log('unicasLetraslength: ' + unicasLetras.length);
-	console.log('almacenadorVecesRepetidas ' + almacenadorVecesRepetidas);
-
-	
-
-	for (let i =0; i< unicasLetras.length;i ++) {
-		console.log("aqui tampoco")
-		/*VAIRABLE DIGESTION*/
-		// if ( unicasLetras[i].includes( '' )) {D="Llene la Encuesta"}
-		// else
-		if (unicasLetras[i]==="D" && almacenadorVecesRepetidas[i]>=6 ) {
-
-			D="Mala Salud"
-		}else if (unicasLetras[i]==="D" && almacenadorVecesRepetidas[i]>=4 ) {
-			D="Salud Regular"
-		}else if (unicasLetras[i]==="D" && almacenadorVecesRepetidas[i]>=2 ) {
-			D="Buena Salud"
-		}else if (unicasLetras[i]==="D" && almacenadorVecesRepetidas[i]>=0 ) {
-			D="Muy Buena Salud"
-		} 
-		// console.log(D); 
-
-
-		/*VAIRABLE INTESTINAL*/
-		if (unicasLetras[i]==="I" && almacenadorVecesRepetidas[i]>=6 ) {
-
-			I="Mala Salud"
-		}else if (unicasLetras[i]==="I" && almacenadorVecesRepetidas[i]>=4 ) {
-			I="Salud Regular"
-		}else if (unicasLetras[i]==="I" && almacenadorVecesRepetidas[i]>=2 ) {
-			I="Buena Salud"
-		}else if (unicasLetras[i]==="I" && almacenadorVecesRepetidas[i]<=1 ) {
-			I="Muy Buena Salud"
-		}
-
-
-		/*VAIRABLE CIRCULATORIO*/
-		if (unicasLetras[i]==="C" && almacenadorVecesRepetidas[i]>=6 ) {
-
-			C="Mala Salud"
-		}else if (unicasLetras[i]==="C" && almacenadorVecesRepetidas[i]>=4 ) {
-			C="Salud Regular"
-		}else if (unicasLetras[i]==="C" && almacenadorVecesRepetidas[i]>=2 ) {
-			C="Buena Salud"
-		}else if (unicasLetras[i]==="C" && almacenadorVecesRepetidas[i]<=1 ) {
-			C="Muy Buena Salud"
-		}
-
-
-			/*VAIRABLE NERVIOSO*/
-		if (unicasLetras[i]==="N" && almacenadorVecesRepetidas[i]>=6 ) {
-
-			N="Mala Salud"
-		}else if (unicasLetras[i]==="N" && almacenadorVecesRepetidas[i]>=4 ) {
-			N="Salud Regular"
-		}else if (unicasLetras[i]==="N" && almacenadorVecesRepetidas[i]>=2 ) {
-			N="Buena Salud"
-		}else if (unicasLetras[i]==="N" && almacenadorVecesRepetidas[i]<=1 ) {
-			N="Muy Buena Salud"
-		}
-
-
-		/*VAIRABLE INMUNOLOGICO*/
-		if (unicasLetras[i]==="M" && almacenadorVecesRepetidas[i]>=6 ) {
-
-			M="Mala Salud"
-		}else if (unicasLetras[i]==="M" && almacenadorVecesRepetidas[i]>=4 ) {
-			M="Salud Regular"
-		}else if (unicasLetras[i]==="M" && almacenadorVecesRepetidas[i]>=2 ) {
-			M="Buena Salud"
-		}else if (unicasLetras[i]==="M" && almacenadorVecesRepetidas[i]<=1 ) {
-			M="Muy Buena Salud"
-		}
-
-
-		/*VAIRABLE RESPIRATORIO*/
-		if (unicasLetras[i]==="R" && almacenadorVecesRepetidas[i]>=6 ) {
-
-			R="Mala Salud"
-		}else if (unicasLetras[i]==="R" && almacenadorVecesRepetidas[i]>=4 ) {
-			R="Salud Regular"
-		}else if (unicasLetras[i]==="R" && almacenadorVecesRepetidas[i]>=2 ) {
-			R="Buena Salud"
-		}else if (unicasLetras[i]==="R" && almacenadorVecesRepetidas[i]<=1 ) {
-			R="Muy Buena Salud"
-		}
-
-	/*VAIRABLE URINARIO*/
-		if (unicasLetras[i]==="U" && almacenadorVecesRepetidas[i]>=6 ) {
-
-			U="Mala Salud"
-		}else if (unicasLetras[i]==="U" && almacenadorVecesRepetidas[i]>=4 ) {
-			U="Salud Regular"
-		}else if (unicasLetras[i]==="U" && almacenadorVecesRepetidas[i]>=2 ) {
-			U="Buena Salud"
-		}else if (unicasLetras[i]==="U" && almacenadorVecesRepetidas[i]<=1 ) {
-			U="Muy Buena Salud"
-		}
-
-	/*VAIRABLE GLANDULAR*/
-		if (unicasLetras[i]==="G" && almacenadorVecesRepetidas[i]>=6 ) {
-
-			G="Mala Salud"
-		}else if (unicasLetras[i]==="G" && almacenadorVecesRepetidas[i]>=4 ) {
-			G="Salud Regular"
-		}else if (unicasLetras[i]==="G" && almacenadorVecesRepetidas[i]>=2 ) {
-			G="Buena Salud"
-		}else if (unicasLetras[i]==="G" && almacenadorVecesRepetidas[i]<=1 ) {
-			G="Muy Buena Salud"
-		}
-
-		/*VAIRABLE RESPIRATORIO*/
-		if (unicasLetras[i]==="E" && almacenadorVecesRepetidas[i]>=6 ) {
-
-			E="Mala Salud"
-		}else if (unicasLetras[i]==="E" && almacenadorVecesRepetidas[i]>=4 ) {
-			E="Salud Regular"
-		}else if (unicasLetras[i]==="E" && almacenadorVecesRepetidas[i]>=2 ) {
-			E="Buena Salud"
-		}else if (unicasLetras[i]==="E" && almacenadorVecesRepetidas[i]<=1 ) {
-			E="Muy Buena Salud"
-		}
-
+	if(number>=4 && number<=5){
+		return "Salud regular"
 	}
-
-	// console.log(D);
-
-
-	document.getElementById('resultadoD').innerHTML=D;
-	document.getElementById('resultadoI').innerHTML=I;
-	document.getElementById('resultadoC').innerHTML=C;
-	document.getElementById('resultadoN').innerHTML=N;
-	document.getElementById('resultadoM').innerHTML=M;
-	document.getElementById('resultadoR').innerHTML=R;
-	document.getElementById('resultadoU').innerHTML=U;
-	document.getElementById('resultadoG').innerHTML=G;
-	document.getElementById('resultadoE').innerHTML=E;
-
-	
-
+	if(number>=6 ){
+		return "Mala Salud"
+	}
 }
 
 
@@ -338,12 +78,29 @@ let linearValueContainer = document.querySelector('.linear-value-container');
 let answerCounter = 0;
 
 form.addEventListener('click', (event)=>{
+		let questionNumberString = event.target.offsetParent.childNodes['1'];
+		let quiestionNumber = Number(questionNumberString.innerText)
+		
 	if(event.target.type == 'radio'){
+
 		let actualNumber = event.target.offsetParent.childNodes['1'];
+
+		// console.log(actualNumber)
 		actualNumber.style.backgroundColor = '#F68B32';
 		actualNumber.innerHTML = `<img class="check" src="./img/check.png" alt="check">`
 		answerCounter = document.querySelectorAll('.check');
 		increaseProgressBar(answerCounter.length)
+
+		let answer = event.target.labels[0].innerText;
+
+		if(answer == 'SI' && event.target.className != 'answered'){
+			event.target.className = 'answered'
+			console.log(event.target.className)
+			sumLetters(points[quiestionNumber-1])
+			console.log(result)
+			showRestult();
+		}
+
 	}
 });
 
