@@ -1,7 +1,3 @@
-var D,I,C,N,M,R,U,G,E;
-
-
-
 let result = {
 	D: 0,
 	I: 0,
@@ -14,11 +10,46 @@ let result = {
 	E: 0
 }
 
+
 let points = [
 	[1,0,1,0,1,0,0,1,0],
 	[0,0,0,0,1,0,0,0,0],
 	[1,1,0,0,0,1,1,0,0],
-	[1,0,0,0,1,0,0,0,0]
+	[1,0,0,0,1,0,0,0,0],
+	[1,1,1,0,0,0,1,0,0],
+	[0,1,0,1,0,0,1,1,0],
+	[0,0,1,1,1,0,0,0,0],
+	[0,1,1,1,0,0,0,1,0],
+	[0,0,0,0,0,0,1,0,0],
+	[1,0,0,1,0,1,0,0,0],
+	[0,0,1,1,0,0,0,1,0],
+	[0,0,0,0,1,0,0,0,0],
+	[1,0,0,0,0,0,0,0,0],
+	[0,0,1,1,1,0,0,1,0],
+	[1,1,0,0,0,0,1,1,1],
+	[0,0,0,1,0,0,0,1,0],
+	[0,1,0,0,0,0,1,0,0],
+	[0,1,0,1,0,0,0,0,0],
+	[0,0,0,0,0,0,0,1,0],
+	[1,0,0,0,0,0,0,0,1],
+	[1,0,0,0,0,0,0,1,1],
+	[1,0,1,0,0,0,0,0,0],
+	[0,0,0,1,0,0,0,1,0],
+	[0,1,0,0,0,0,0,0,0],
+	[0,0,0,1,0,0,0,0,1],
+	[0,0,0,0,1,1,0,0,0],
+	[0,0,1,0,0,0,0,1,0],
+	[1,0,1,0,0,0,0,1,1],
+	[0,0,0,1,1,0,0,1,0],
+	[1,1,0,0,1,0,0,0,0],
+	[1,1,0,0,0,1,0,0,0],
+	[0,0,0,0,0,0,1,0,1],
+	[1,0,0,1,0,0,0,0,0],
+	[0,1,0,1,0,0,0,1,0],
+	[0,1,1,0,1,0,0,0,1],
+	[0,0,0,0,0,1,0,0,0],
+	[0,1,0,0,0,0,1,1,0],
+	[0,1,0,1,0,0,0,1,0],	
 ]
 
 function sumLetters (array){
@@ -33,12 +64,21 @@ function sumLetters (array){
 	result.E = result.E + array[8]
 }
 
+function subtractLetters(array){
+	result.D = result.D - array[0]
+	result.I = result.I - array[1]
+	result.C = result.C - array[2]
+	result.N = result.N - array[3]
+	result.M = result.M - array[4]
+	result.R = result.R - array[5]
+	result.U = result.U - array[6]
+	result.G = result.G - array[7]
+	result.E = result.E - array[8]
+}
+
 showRestult()
 
 function showRestult() {
-
-	console.log(calculateResultInWords(result.D))
-
 	document.getElementById('resultadoD').innerHTML = calculateResultInWords(result.D);
 	document.getElementById('resultadoI').innerHTML = calculateResultInWords(result.I);
 	document.getElementById('resultadoC').innerHTML = calculateResultInWords(result.C);
@@ -48,9 +88,19 @@ function showRestult() {
 	document.getElementById('resultadoU').innerHTML = calculateResultInWords(result.U);
 	document.getElementById('resultadoG').innerHTML = calculateResultInWords(result.G);
 	document.getElementById('resultadoE').innerHTML = calculateResultInWords(result.E);
+	console.log(result.D)
+	console.log(result.I)
+	console.log(result.C)
+	console.log(result.N)
+	console.log(result.M)
+	console.log(result.R)
 }
 
 function calculateResultInWords(number){
+	if (number<=0){
+		number =0
+	}
+	
 	if(number>=0 && number<=1){
 		return "Muy buena salud"
 	}
@@ -76,32 +126,42 @@ let progressBar = document.querySelector('.circular-progress');
 let valueContainer = document.querySelector('.value-container');
 let linearValueContainer = document.querySelector('.linear-value-container');
 let answerCounter = 0;
+let answerYes = []
+let answerNO = []
 
 form.addEventListener('click', (event)=>{
-		let questionNumberString = event.target.offsetParent.childNodes['1'];
-		let quiestionNumber = Number(questionNumberString.innerText)
-		
-	if(event.target.type == 'radio'){
+	if (event.target.nodeName == 'INPUT'){ // Me aseguro de solo trabajar con el INPUT
+		let questionNumberString = event.target.className[0];
+		let quiestionNumber = Number(questionNumberString)
+			
+		// if(event.target.type == 'radio'){
 
-		let actualNumber = event.target.offsetParent.childNodes['1'];
+			// PINTO EL NUMERO DE VERDE Y PONGO VISTO
+			let actualNumber = event.target.offsetParent.childNodes['1'];
+			actualNumber.style.backgroundColor = '#F68B32';
+			actualNumber.innerHTML = `<img class="check" src="./img/check.png" alt="check">`
+			answerCounter = document.querySelectorAll('.check');
 
-		// console.log(actualNumber)
-		actualNumber.style.backgroundColor = '#F68B32';
-		actualNumber.innerHTML = `<img class="check" src="./img/check.png" alt="check">`
-		answerCounter = document.querySelectorAll('.check');
-		increaseProgressBar(answerCounter.length)
+			// Se incrementa la barra de progreso
+			increaseProgressBar(answerCounter.length)
 
-		let answer = event.target.labels[0].innerText;
+			let answer = event.target.labels[0].innerText;
 
-		if(answer == 'SI' && event.target.className != 'answered'){
-			event.target.className = 'answered'
-			console.log(event.target.className)
-			sumLetters(points[quiestionNumber-1])
-			console.log(result)
+			if(answer == 'SI' && answerYes[quiestionNumber] != true){
+				answerYes[quiestionNumber] = true;
+				answerNO[quiestionNumber] = false;
+				sumLetters(points[quiestionNumber-1])
+			}else if(answer == 'NO' && answerNO[quiestionNumber] != true){
+				answerYes[quiestionNumber] = false
+				answerNO[quiestionNumber] = true
+				subtractLetters(points[quiestionNumber-1])
+			}
+
 			showRestult();
-		}
 
+		// }
 	}
+	
 });
 
 function increaseProgressBar(answerCounter){
