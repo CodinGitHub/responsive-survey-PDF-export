@@ -10,7 +10,6 @@ let result = {
 	E: 0
 }
 
-
 let points = [
 	[1,0,1,0,1,0,0,1,0],
 	[0,0,0,0,1,0,0,0,0],
@@ -52,7 +51,125 @@ let points = [
 	[0,1,0,1,0,0,0,1,0],	
 ]
 
+// PROGRESS
+
+// Estilo a números y barra de progreso
+
+let form = document.getElementById('formulario');
+let linearProgressBar = document.getElementById('prrogress-bar');
+let progressBar = document.querySelector('.circular-progress');
+let valueContainer = document.querySelector('.value-container');
+let linearValueContainer = document.querySelector('.linear-value-container');
+let answerCounter = 0;
+let answerYes = []
+let answerNO = []
+
+form.addEventListener('click', (event)=>{
+	console.log(event)
+		
+	if (event.target.type == 'radio'){ // Me aseguro de solo trabajar con el INPUT tipo radio
+		// console.log(event)
+		let questionNumberString = event.target.className;
+		let quiestionNumber = Number(questionNumberString)
+		// console.log('quiestionNumber: ' + quiestionNumber)
+			
+		// PINTO EL NUMERO DE VERDE Y PONGO VISTO
+		let actualNumber = event.target.offsetParent.childNodes['1'];
+		actualNumber.style.backgroundColor = '#F68B32';
+		actualNumber.innerHTML = `<img class="check" src="./img/check.png" alt="check">`
+		answerCounter = document.querySelectorAll('.check');
+
+		// Se incrementa la barra de progreso
+		increaseProgressBar(answerCounter.length)
+
+		// Pregunto si la respuesta es un SI o un NO
+		let answer = event.target.labels[0].innerText;
+
+		if(answer == 'SI' && answerYes[quiestionNumber] != true){
+			answerYes[quiestionNumber] = true;
+			answerNO[quiestionNumber] = false;
+			sumLetters(points[quiestionNumber-1])
+		}else if(answer == 'NO' && answerNO[quiestionNumber] != true){
+			answerYes[quiestionNumber] = false;
+			answerNO[quiestionNumber] = true;
+			subtractLetters(points[quiestionNumber-1])
+		}
+
+		showRestult();
+	}
+	
+});
+
+function increaseProgressBar(answerCounter){
+	let porcentage = Math.floor((100 * answerCounter) / 38);
+	valueContainer.innerHTML = `${porcentage}<span>%</span>`
+	progressBar.style.background = `conic-gradient(#F68B32 ${porcentage*3.6}deg, #CACECF ${porcentage*3.6}deg)`;
+	linearProgressBar.value = porcentage
+	linearValueContainer.innerHTML = `${porcentage}<span>%</span>`
+}
+
+valueContainer.innerHTML = `${answerCounter}<span> %</span>`
+
+function subtractLetters(array){
+	// console.log(array)
+	console.log('result.D: ' + result.D)
+	if(result.D > 0){
+		result.D = result.D - array[0]
+	}else{
+		result.D = 0
+	}
+
+	if(result.I > 0){
+		result.I= result.I - array[1]
+	}else{
+		result.I = 0
+	}
+
+	if(result.C > 0){
+		result.C = result.C - array[2]
+	}else{
+		result.C = 0
+	}
+
+	if(result.N > 0){
+		result.N = result.N - array[3]
+	}else{
+		result.N = 0
+	}
+
+	if(result.M > 0){
+		result.M = result.M - array[4]
+	}else{
+		result.M = 0
+	}
+
+	if(result.R > 0){
+		result.R = result.R - array[5]
+	}else{
+		result.R = 0
+	}
+
+	if(result.U > 0){
+		result.U = result.U - array[6]
+	}else{
+		result.U = 0
+	}
+
+	if(result.G > 0){
+		result.G = result.G - array[7]
+	}else{
+		result.G = 0
+	}
+
+	if(result.E > 0){
+		result.E = result.E - array[8]
+	}else{
+		result.E = 0
+	}
+}
+
 function sumLetters (array){
+	console.log('sumando')
 	result.D = result.D + array[0]
 	result.I = result.I + array[1]
 	result.C = result.C + array[2]
@@ -64,21 +181,12 @@ function sumLetters (array){
 	result.E = result.E + array[8]
 }
 
-function subtractLetters(array){
-	result.D = result.D - array[0]
-	result.I = result.I - array[1]
-	result.C = result.C - array[2]
-	result.N = result.N - array[3]
-	result.M = result.M - array[4]
-	result.R = result.R - array[5]
-	result.U = result.U - array[6]
-	result.G = result.G - array[7]
-	result.E = result.E - array[8]
-}
-
 showRestult()
 
 function showRestult() {
+	// console.log(answerYes)
+	
+	// console.log(result)
 	document.getElementById('resultadoD').innerHTML = calculateResultInWords(result.D);
 	document.getElementById('resultadoI').innerHTML = calculateResultInWords(result.I);
 	document.getElementById('resultadoC').innerHTML = calculateResultInWords(result.C);
@@ -88,18 +196,19 @@ function showRestult() {
 	document.getElementById('resultadoU').innerHTML = calculateResultInWords(result.U);
 	document.getElementById('resultadoG').innerHTML = calculateResultInWords(result.G);
 	document.getElementById('resultadoE').innerHTML = calculateResultInWords(result.E);
-	console.log(result.D)
-	console.log(result.I)
-	console.log(result.C)
-	console.log(result.N)
-	console.log(result.M)
-	console.log(result.R)
+	
+	document.getElementById('digestivo').innerText = `DIGESTIVO: ${result.D}`
+	document.getElementById('intestinal').innerText = `INTESTINAL: ${result.I}`
+	document.getElementById('circulatorio').innerText = `CIRCULATORIO: ${result.C}`
+	document.getElementById('nervioso').innerText = `NERVIOSO: ${result.N}`
+	document.getElementById('inmunologico').innerText = `INMUNOLOGICO: ${result.M}`
+	document.getElementById('respiratorio').innerText = `RESPIRATORIO: ${result.R}`
+	document.getElementById('urinario').innerText = `URINARIO: ${result.U}`
+	document.getElementById('glandular').innerText = `GLANDULAR: ${result.G}`
+	document.getElementById('estructural').innerText = `ESTRUCTURAL: ${result.E}`
 }
 
 function calculateResultInWords(number){
-	if (number<=0){
-		number =0
-	}
 	
 	if(number>=0 && number<=1){
 		return "Muy buena salud"
@@ -115,78 +224,20 @@ function calculateResultInWords(number){
 	}
 }
 
-
-// PROGRESS
-
-// Estilo a números y barra de progreso
-
-let form = document.getElementById('formulario');
-let linearProgressBar = document.getElementById('prrogress-bar');
-let progressBar = document.querySelector('.circular-progress');
-let valueContainer = document.querySelector('.value-container');
-let linearValueContainer = document.querySelector('.linear-value-container');
-let answerCounter = 0;
-let answerYes = []
-let answerNO = []
-
-form.addEventListener('click', (event)=>{
-	if (event.target.nodeName == 'INPUT'){ // Me aseguro de solo trabajar con el INPUT
-		let questionNumberString = event.target.className[0];
-		let quiestionNumber = Number(questionNumberString)
-			
-		// if(event.target.type == 'radio'){
-
-			// PINTO EL NUMERO DE VERDE Y PONGO VISTO
-			let actualNumber = event.target.offsetParent.childNodes['1'];
-			actualNumber.style.backgroundColor = '#F68B32';
-			actualNumber.innerHTML = `<img class="check" src="./img/check.png" alt="check">`
-			answerCounter = document.querySelectorAll('.check');
-
-			// Se incrementa la barra de progreso
-			increaseProgressBar(answerCounter.length)
-
-			let answer = event.target.labels[0].innerText;
-
-			if(answer == 'SI' && answerYes[quiestionNumber] != true){
-				answerYes[quiestionNumber] = true;
-				answerNO[quiestionNumber] = false;
-				sumLetters(points[quiestionNumber-1])
-			}else if(answer == 'NO' && answerNO[quiestionNumber] != true){
-				answerYes[quiestionNumber] = false
-				answerNO[quiestionNumber] = true
-				subtractLetters(points[quiestionNumber-1])
-			}
-
-			showRestult();
-
-		// }
-	}
-	
-});
-
-function increaseProgressBar(answerCounter){
-	let porcentage = Math.floor((100 * answerCounter) / 38);
-	valueContainer.innerHTML = `${porcentage}<span>%</span>`
-	progressBar.style.background = `conic-gradient(#F68B32 ${porcentage*3.6}deg, #CACECF ${porcentage*3.6}deg)`;
-	linearProgressBar.value = porcentage
-	linearValueContainer.innerHTML = `${porcentage}<span>%</span>`
-}
-
-valueContainer.innerHTML = `${answerCounter}<span> %</span>`
-
+// MODALES
 
 // Modal de resultado
-let resultBtn = document.getElementById('resultBtn');
-let accepResultBtn = document.getElementById("accepResultBtn");
+// let resultBtn = document.getElementById('resultBtn');
+// let accepResultBtn = document.getElementById("accepResultBtn");
 
-resultBtn.addEventListener('click', ()=>{
-	if(answerCounter.length == 38){
-		calculate();
-	}else{
-		let resultModal = document.getElementById('resultModal');
-		resultModal.style.display = "block";
-	}
-});
+// resultBtn.addEventListener('click', ()=>{
+// 	if(answerCounter.length == 38){
+// 		calculate();
+// 	}else{
+// 		let resultModal = document.getElementById('resultModal');
+// 		resultModal.style.display = "block";
+// 	}
+// });
 
 
 accepResultBtn.addEventListener('click', ()=>{
@@ -225,15 +276,15 @@ function exportarPDF(){
 	doc.text('RESULTADOS:', 20, 40);
 
 	//Agrego texto con variables
-	doc.text(`Digestivo: ${D}`, 20, 60);
-	doc.text(`Intestinal: ${I}`, 20, 70);
-	doc.text(`Circulatorio: ${C}`, 20, 80);
-	doc.text(`Nervioso: ${N}`, 20, 90);
-	doc.text(`Inmunológico: ${M}`, 20, 100);
-	doc.text(`Respiratorio: ${R}`, 20, 110);
-	doc.text(`Urinario: ${U}`, 20, 120);
-	doc.text(`Glandular: ${G}`, 20, 130);
-	doc.text(`Estructural: ${E}`, 20, 140);
+	doc.text(`Digestivo: ${calculateResultInWords(result.D)}`, 20, 60);
+	doc.text(`Intestinal: ${calculateResultInWords(result.I)}`, 20, 70);
+	doc.text(`Circulatorio: ${calculateResultInWords(result.C)}`, 20, 80);
+	doc.text(`Nervioso: ${calculateResultInWords(result.N)}`, 20, 90);
+	doc.text(`Inmunológico: ${calculateResultInWords(result.M)}`, 20, 100);
+	doc.text(`Respiratorio: ${calculateResultInWords(result.R)}`, 20, 110);
+	doc.text(`Urinario: ${calculateResultInWords(result.U)}`, 20, 120);
+	doc.text(`Glandular: ${calculateResultInWords(result.G)}`, 20, 130);
+	doc.text(`Estructural: ${calculateResultInWords(result.E)}`, 20, 140);
 
 	//Fecha
 	let actualDate = new Date()
