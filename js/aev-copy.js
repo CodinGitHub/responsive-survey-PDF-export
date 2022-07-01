@@ -85,13 +85,13 @@ form.addEventListener('click', (event)=>{
 		// Pregunto si la respuesta es un SI o un NO
 		let answer = event.target.labels[0].innerText;
 
-		if(answer == 'SI' && answerYes[quiestionNumber] != true){
-			answerYes[quiestionNumber] = true;
-			answerNO[quiestionNumber] = false;
+		if(answer == 'SI' && answerYes[quiestionNumber-1] != true){
+			answerYes[quiestionNumber-1] = true;
+			answerNO[quiestionNumber-1] = false;
 			sumLetters(points[quiestionNumber-1])
-		}else if(answer == 'NO' && answerNO[quiestionNumber] != true){
-			answerYes[quiestionNumber] = false;
-			answerNO[quiestionNumber] = true;
+		}else if(answer == 'NO' && answerNO[quiestionNumber-1] == false){
+			answerYes[quiestionNumber-1] = false;
+			answerNO[quiestionNumber-1] = true;
 			subtractLetters(points[quiestionNumber-1])
 		}
 
