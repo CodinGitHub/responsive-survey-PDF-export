@@ -26,7 +26,7 @@
 				</div>
 				<!-- linear progress bar -->
 				<div class="linear-progress">
-					<progress class="progress-bar" id="prrogress-bar" max="100" value="0"></progress>
+					<progress class="linear-progress-bar" id="prrogress-bar" max="100" value="0"></progress>
 					<span class="linear-value-container">0%</span>
 				</div>
 			</aside>
@@ -616,34 +616,70 @@
 		<aside class="sidebar">
 			<h3 class="sidebar__header">CRITERIOS DE CALIFICACION</h3>
 			<div class="result-container">
+
 				<h3 id="digestivo">DIGESTIVO</h3>
-				<h3 class="Tresultado" id='resultadoD'></h3>
-			
+				<div class="sidebar-container">
+					<progress class="progress-bar side-bar-class" id="d-bar" max="100" value="0"></progress>
+					<h3 class="Tresultado sidebar-resultado" id='resultadoD'></h3>
+				</div>
+
 				<h3 id="intestinal">INTESTINAL</h3>
-				<h3 class="Tresultado" id='resultadoI'></h3>
-			
+				<div class="sidebar-container">
+					<progress class="progress-bar side-bar-class" id="i-bar" max="100" value="0"></progress>
+					<h3 class="Tresultado sidebar-resultado" id='resultadoI'></h3>
+				</div>
+
 				<h3 id="circulatorio">CIRCULATORIO</h3>
-				<h3 class="Tresultado" id='resultadoC'></h3>
-			
+				<div class="sidebar-container">
+					<progress class="progress-bar side-bar-class" id="c-bar" max="100" value="0"></progress>
+					<h3 class="Tresultado sidebar-resultado" id='resultadoC'></h3>
+				</div>
+
 				<h3 id="nervioso">NERVIOSO</h3>
-				<h3 class="Tresultado" id='resultadoN'></h3>
+				<div class="sidebar-container">
+					<progress class="progress-bar side-bar-class" id="n-bar" max="100" value="0"></progress>
+					<h3 class="Tresultado sidebar-resultado" id='resultadoN'></h3>
+				</div>
 			
 				<h3 id="inmunologico">INMUNOLOGICO</h3>
-				<h3 class="Tresultado" id='resultadoM'></h3>
+				<div class="sidebar-container">
+					<progress class="progress-bar side-bar-class" id="m-bar" max="100" value="0"></progress>
+					<h3 class="Tresultado sidebar-resultado" id='resultadoM'></h3>
+				</div>
 			
 				<h3 id="respiratorio">RESPIRATORIO</h3>
-				<h3 class="Tresultado" id='resultadoR'></h3>
+				<div class="sidebar-container">
+					<progress class="progress-bar side-bar-class" id="r-bar" max="100" value="0"></progress>
+					<h3 class="Tresultado sidebar-resultado" id='resultadoR'></h3>
+				</div>
 			
 				<h3 id="urinario">URINARIO</h3>
-				<h3 class="Tresultado" id='resultadoU'></h3>
+				<div class="sidebar-container">
+					<progress class="progress-bar side-bar-class" id="u-bar" max="100" value="0"></progress>
+					<h3 class="Tresultado sidebar-resultado" id='resultadoU'></h3>
+				</div>
 			
 				<h3 id="glandular">GLANDULAR</h3>
-				<h3 class="Tresultado" id='resultadoG'></h3>
+				<div class="sidebar-container">
+					<progress class="progress-bar side-bar-class" id="g-bar" max="100" value="0"></progress>
+					<h3 class="Tresultado sidebar-resultado" id='resultadoG'></h3>
+				</div>
 			
 				<h3 id="estructural">ESTRUCTURAL</h3>
-				<h3 class="Tresultado" id='resultadoE'></h3>
+				<div class="sidebar-container">
+					<progress class="progress-bar side-bar-class" id="e-bar" max="100" value="0"></progress>
+					<h3 class="Tresultado sidebar-resultado" id='resultadoE'></h3>
+				</div>
 				
 			</div>
+
+			<div class="score-container">
+				<p class="score very-good">Muy buena Salud</p>
+				<p class="score good">Buena Salud</p>
+				<p class="score regular">Salud Regular</p>
+				<p class="score bad">Mala Salud</p>
+			</div>
+
 			<div class="export-container">
 				<input id="exportBtn" class="button" type="button" value="EXPORTAR""/>
 			</div>

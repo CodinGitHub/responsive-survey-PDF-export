@@ -65,7 +65,7 @@ let answerYes = []
 let answerNO = []
 
 form.addEventListener('click', (event)=>{
-	console.log(event)
+	// console.log(event)
 		
 	if (event.target.type == 'radio'){ // Me aseguro de solo trabajar con el INPUT tipo radio
 		// console.log(event)
@@ -169,7 +169,7 @@ function subtractLetters(array){
 }
 
 function sumLetters (array){
-	console.log('sumando')
+	// console.log('sumando')
 	result.D = result.D + array[0]
 	result.I = result.I + array[1]
 	result.C = result.C + array[2]
@@ -187,27 +187,98 @@ function showRestult() {
 	// console.log(answerYes)
 	
 	// console.log(result)
-	document.getElementById('resultadoD').innerHTML = calculateResultInWords(result.D);
-	document.getElementById('resultadoI').innerHTML = calculateResultInWords(result.I);
-	document.getElementById('resultadoC').innerHTML = calculateResultInWords(result.C);
-	document.getElementById('resultadoN').innerHTML = calculateResultInWords(result.N);
-	document.getElementById('resultadoM').innerHTML = calculateResultInWords(result.M);
-	document.getElementById('resultadoR').innerHTML = calculateResultInWords(result.R);
-	document.getElementById('resultadoU').innerHTML = calculateResultInWords(result.U);
-	document.getElementById('resultadoG').innerHTML = calculateResultInWords(result.G);
-	document.getElementById('resultadoE').innerHTML = calculateResultInWords(result.E);
 	
-	document.getElementById('digestivo').innerText = `DIGESTIVO: ${result.D}`
-	document.getElementById('intestinal').innerText = `INTESTINAL: ${result.I}`
-	document.getElementById('circulatorio').innerText = `CIRCULATORIO: ${result.C}`
-	document.getElementById('nervioso').innerText = `NERVIOSO: ${result.N}`
-	document.getElementById('inmunologico').innerText = `INMUNOLOGICO: ${result.M}`
-	document.getElementById('respiratorio').innerText = `RESPIRATORIO: ${result.R}`
-	document.getElementById('urinario').innerText = `URINARIO: ${result.U}`
-	document.getElementById('glandular').innerText = `GLANDULAR: ${result.G}`
-	document.getElementById('estructural').innerText = `ESTRUCTURAL: ${result.E}`
-}
+	/*
+	Digestivo 14
+	Intestinal 14
+	circulatorio 10
+	Nervioso 14
+	Inmunologico 10
+	Resopiratorio 5
+	Urinario 8
+	Glandular 16
+	Estructural 7
+	*/
 
+	/* 
+	
+	14 -> 100%
+	X -> ???
+
+	*/
+
+	function calculatePercentage(value, base){
+		return Math.round((value * 100) / base)
+	}
+
+	document.getElementById('d-bar').value = calculatePercentage(result.D, 14);
+	document.getElementById('resultadoD').innerHTML = `${calculatePercentage(result.D, 14)}%`;
+	
+	document.getElementById('i-bar').value = calculatePercentage(result.I, 14);
+	document.getElementById('resultadoI').innerHTML = `${calculatePercentage(result.I, 14)}%`;
+
+	document.getElementById('c-bar').value = calculatePercentage(result.C, 10);
+	document.getElementById('resultadoC').innerHTML = `${calculatePercentage(result.C, 10)}%`;
+
+	document.getElementById('n-bar').value = calculatePercentage(result.N, 14);
+	document.getElementById('resultadoN').innerHTML = `${calculatePercentage(result.N, 14)}%`;
+
+	document.getElementById('m-bar').value = calculatePercentage(result.M, 10);
+	document.getElementById('resultadoM').innerHTML = `${calculatePercentage(result.M, 10)}%`;
+
+	document.getElementById('r-bar').value = calculatePercentage(result.R, 5);
+	document.getElementById('resultadoR').innerHTML = `${calculatePercentage(result.R, 5)}%`;
+
+	document.getElementById('u-bar').value = calculatePercentage(result.U, 8);
+	document.getElementById('resultadoU').innerHTML = `${calculatePercentage(result.U, 8)}%`;
+
+	document.getElementById('g-bar').value = calculatePercentage(result.G, 16);
+	document.getElementById('resultadoG').innerHTML = `${calculatePercentage(result.G, 16)}%`;
+
+	document.getElementById('e-bar').value = calculatePercentage(result.E,7);
+	document.getElementById('resultadoE').innerHTML = `${calculatePercentage(result.E, 7)}%`;
+
+	// document.getElementById('resultadoI').innerHTML = calculateResultInWords(result.I);
+	// document.getElementById('resultadoC').innerHTML = calculateResultInWords(result.C);
+	// document.getElementById('resultadoN').innerHTML = calculateResultInWords(result.N);
+	// document.getElementById('resultadoM').innerHTML = calculateResultInWords(result.M);
+	// document.getElementById('resultadoR').innerHTML = calculateResultInWords(result.R);
+	// document.getElementById('resultadoU').innerHTML = calculateResultInWords(result.U);
+	// document.getElementById('resultadoG').innerHTML = calculateResultInWords(result.G);
+	// document.getElementById('resultadoE').innerHTML = calculateResultInWords(result.E);
+	
+	// document.getElementById('digestivo').innerText = `DIGESTIVO: ${result.D}`
+	// document.getElementById('intestinal').innerText = `INTESTINAL: ${result.I}`
+	// document.getElementById('circulatorio').innerText = `CIRCULATORIO: ${result.C}`
+	// document.getElementById('nervioso').innerText = `NERVIOSO: ${result.N}`
+	// document.getElementById('inmunologico').innerText = `INMUNOLOGICO: ${result.M}`
+	// document.getElementById('respiratorio').innerText = `RESPIRATORIO: ${result.R}`
+	// document.getElementById('urinario').innerText = `URINARIO: ${result.U}`
+	// document.getElementById('glandular').innerText = `GLANDULAR: ${result.G}`
+	// document.getElementById('estructural').innerText = `ESTRUCTURAL: ${result.E}`
+
+
+	changeBarColors(result.D, document.getElementById('d-bar'))
+	changeBarColors(result.I, document.getElementById('i-bar'))
+	changeBarColors(result.C, document.getElementById('c-bar'))
+	changeBarColors(result.N, document.getElementById('n-bar'))
+	changeBarColors(result.M, document.getElementById('m-bar'))
+	changeBarColors(result.R, document.getElementById('r-bar'))
+	changeBarColors(result.U, document.getElementById('u-bar'))
+	changeBarColors(result.G, document.getElementById('g-bar'))
+	changeBarColors(result.E, document.getElementById('e-bar'))
+
+	changeNumberColor(calculatePercentage(result.D, 14), document.getElementById('resultadoD'))
+	changeNumberColor(calculatePercentage(result.I, 14), document.getElementById('resultadoI'))
+	changeNumberColor(calculatePercentage(result.C, 10), document.getElementById('resultadoC'))
+	changeNumberColor(calculatePercentage(result.N, 14), document.getElementById('resultadoN'))
+	changeNumberColor(calculatePercentage(result.M, 10), document.getElementById('resultadoM'))
+	changeNumberColor(calculatePercentage(result.R, 5), document.getElementById('resultadoR'))
+	changeNumberColor(calculatePercentage(result.U, 8), document.getElementById('resultadoU'))
+	changeNumberColor(calculatePercentage(result.G, 16), document.getElementById('resultadoG'))
+	changeNumberColor(calculatePercentage(result.E, 7), document.getElementById('resultadoE'))
+}
+/*
 function calculateResultInWords(number){
 	
 	if(number>=0 && number<=1){
@@ -221,6 +292,27 @@ function calculateResultInWords(number){
 	}
 	if(number>=6 ){
 		return "Mala Salud"
+	}
+}
+*/
+
+function changeNumberColor(percentage, element){
+	// console.log(percentage)
+	if(percentage>=90){
+		element.style.setProperty("--sdcolor", "#F7F8FA")
+	}
+}
+
+
+function changeBarColors(number, element){	
+	if(number>=0 && number<=1){
+		element.style.setProperty("--c", "#3AB549")
+	}else if(number>=2 && number<=3){
+		element.style.setProperty("--c", "#FED140")
+	}else if(number>=4 && number<=5){
+		element.style.setProperty("--c", "#f7941d")
+	}else if(number>=6 ){
+		element.style.setProperty("--c", "#ED1B24")
 	}
 }
 
