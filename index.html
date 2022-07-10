@@ -8,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 	<link rel="stylesheet" href="./css/modals.css">
 	<link rel="stylesheet" href="./css/styles.css">
+	<script src="https://kit.fontawesome.com/003962264f.js" crossorigin="anonymous"></script>
 	<title>AEV-NSP</title>
 </head>
 <body>
@@ -617,69 +618,123 @@
 			<h3 class="sidebar__header">CRITERIOS DE CALIFICACION</h3>
 			<div class="result-container">
 
-				<h3 id="digestivo">DIGESTIVO</h3>
-				<div class="sidebar-container">
-					<progress class="progress-bar side-bar-class" id="d-bar" max="100" value="0"></progress>
-					<h3 class="Tresultado sidebar-resultado" id='resultadoD'></h3>
+				<div class="side-report">
+					<h3 id="digestivo">Digestivo</h3>
+					<div class="sidebar-container">
+						<div id="D-icon-circular-progress-container" class="icon-circular-progress-container">
+							<div id="D-icon-circular-progress" class="icon-circular-progress">
+								<div id="D-icon-value-container" class="icon-value-container">
+									<img src="./img/digestivo.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
-				<h3 id="intestinal">INTESTINAL</h3>
-				<div class="sidebar-container">
-					<progress class="progress-bar side-bar-class" id="i-bar" max="100" value="0"></progress>
-					<h3 class="Tresultado sidebar-resultado" id='resultadoI'></h3>
+				<div class="side-report">
+					<h3 id="digestivo">Intestinal</h3>
+					<div class="sidebar-container">
+						<div id="I-icon-circular-progress-container" class="icon-circular-progress-container">
+							<div id="I-icon-circular-progress" class="icon-circular-progress">
+								<div id="I-icon-value-container" class="icon-value-container">
+									<img src="./img/stomach.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
-				<h3 id="circulatorio">CIRCULATORIO</h3>
-				<div class="sidebar-container">
-					<progress class="progress-bar side-bar-class" id="c-bar" max="100" value="0"></progress>
-					<h3 class="Tresultado sidebar-resultado" id='resultadoC'></h3>
+				<div class="side-report">
+					<h3 id="digestivo">Circulatorio</h3>
+					<div class="sidebar-container">
+						<div id="C-icon-circular-progress-container" class="icon-circular-progress-container">
+							<div id="C-icon-circular-progress" class="icon-circular-progress">
+								<div id="C-icon-value-container" class="icon-value-container">
+									<img src="./img/circulatorio.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
-				<h3 id="nervioso">NERVIOSO</h3>
-				<div class="sidebar-container">
-					<progress class="progress-bar side-bar-class" id="n-bar" max="100" value="0"></progress>
-					<h3 class="Tresultado sidebar-resultado" id='resultadoN'></h3>
+				<div class="side-report">
+					<h3 id="digestivo">Nervioso</h3>
+					<div class="sidebar-container">
+						<div id="N-icon-circular-progress-container" class="icon-circular-progress-container">
+							<div id="N-icon-circular-progress" class="icon-circular-progress">
+								<div id="N-icon-value-container" class="icon-value-container">
+									<img src="./img/nervioso.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			
-				<h3 id="inmunologico">INMUNOLOGICO</h3>
-				<div class="sidebar-container">
-					<progress class="progress-bar side-bar-class" id="m-bar" max="100" value="0"></progress>
-					<h3 class="Tresultado sidebar-resultado" id='resultadoM'></h3>
+
+				<div class="side-report">
+					<h3 id="digestivo">Inmunológico</h3>
+					<div class="sidebar-container">
+						<div id="M-icon-circular-progress-container" class="icon-circular-progress-container">
+							<div id="M-icon-circular-progress" class="icon-circular-progress">
+								<div id="M-icon-value-container" class="icon-value-container">
+									<img src="./img/inmunologico.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			
-				<h3 id="respiratorio">RESPIRATORIO</h3>
-				<div class="sidebar-container">
-					<progress class="progress-bar side-bar-class" id="r-bar" max="100" value="0"></progress>
-					<h3 class="Tresultado sidebar-resultado" id='resultadoR'></h3>
+
+				<div class="side-report">
+					<h3 id="digestivo">Respiratorio</h3>
+					<div class="sidebar-container">
+						<div id="R-icon-circular-progress-container" class="icon-circular-progress-container">
+							<div id="R-icon-circular-progress" class="icon-circular-progress">
+								<div id="R-icon-value-container" class="icon-value-container">
+									<img src="./img/respiratorio.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			
-				<h3 id="urinario">URINARIO</h3>
-				<div class="sidebar-container">
-					<progress class="progress-bar side-bar-class" id="u-bar" max="100" value="0"></progress>
-					<h3 class="Tresultado sidebar-resultado" id='resultadoU'></h3>
+
+				<div class="side-report">
+					<h3 id="digestivo">Urinario</h3>
+					<div class="sidebar-container">
+						<div id="U-icon-circular-progress-container" class="icon-circular-progress-container">
+							<div id="U-icon-circular-progress" class="icon-circular-progress">
+								<div id="U-icon-value-container" class="icon-value-container">
+									<img src="./img/urinario.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			
-				<h3 id="glandular">GLANDULAR</h3>
-				<div class="sidebar-container">
-					<progress class="progress-bar side-bar-class" id="g-bar" max="100" value="0"></progress>
-					<h3 class="Tresultado sidebar-resultado" id='resultadoG'></h3>
+
+				<div class="side-report">
+					<h3 id="digestivo">Glandular</h3>
+					<div class="sidebar-container">
+						<div id="G-icon-circular-progress-container" class="icon-circular-progress-container">
+							<div id="G-icon-circular-progress" class="icon-circular-progress">
+								<div id="G-icon-value-container" class="icon-value-container">
+									<img src="./img/glandular.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			
-				<h3 id="estructural">ESTRUCTURAL</h3>
-				<div class="sidebar-container">
-					<progress class="progress-bar side-bar-class" id="e-bar" max="100" value="0"></progress>
-					<h3 class="Tresultado sidebar-resultado" id='resultadoE'></h3>
+
+				<div class="side-report">
+					<h3 id="digestivo">Estructural</h3>
+					<div class="sidebar-container">
+						<div id="E-icon-circular-progress-container" class="icon-circular-progress-container">
+							<div id="E-icon-circular-progress" class="icon-circular-progress">
+								<div id="E-icon-value-container" class="icon-value-container">
+									<img src="./img/estructural.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				
 			</div>
-
-			<div class="score-container">
-				<p class="score very-good">Muy buena Salud</p>
-				<p class="score good">Buena Salud</p>
-				<p class="score regular">Salud Regular</p>
-				<p class="score bad">Mala Salud</p>
-			</div>
-
 			<div class="export-container">
 				<input id="exportBtn" class="button" type="button" value="EXPORTAR""/>
 			</div>
@@ -707,6 +762,31 @@
 		</div>
 	</div>
 
+	<!-- form Modal -->
+	<div id="formModal" class="modal">
+		<div class="modal-content">
+			<p>Para poder descargar los resultados por favor ingresa los siguientes datos:</p>
+			<form id="formResult" action="">
+				<input id="inputName" type="text" placeholder="Nombre">
+				<div id="nombreError"></div>
+				<input id="inputEmail" type="email" placeholder="Correo">
+				<div id="emailError"></div>
+
+				<div class="radio-container">
+					<input type="radio" id="hombre" name="genero" checked>
+					<label for="hombre">Hombre</label>
+					<input type="radio" id="mujer" name="genero">
+					<label for="mujer">Mujer</label>
+				</div>
+			
+			<div class="button-modal-container">
+				<button class="button-modal" id="cancelExporBtn">Cancelar</button>
+				<input type="submit" class="button-modal" id="descargarBtn" value="Descargar"></input>
+			</div>
+			</form>
+		</div>
+	</div>
+
 	<footer class="footer">
 		<p><strong>Copyright &copy; 2022 <a href="https://www.naturessunshine.ec" target="_blank">Nature's Sunshine EC</a>.</strong></p>
 		<p>Todos los derechos reservados.</p>
@@ -718,7 +798,7 @@
 		</div>
 	</footer>	
 
-
+	<script src="https://kit.fontawesome.com/003962264f.js" crossorigin="anonymous"></script>
 	<script src="./js/jspdf.min.js"></script>
 	<script src="./js/modals.js"></script>
 	<!-- <script src="./js/aev.js"></script> -->

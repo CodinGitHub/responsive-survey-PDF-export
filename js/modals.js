@@ -1,6 +1,8 @@
 let modal = document.getElementById("myModal");
+let formModal = document.getElementById("formModal");
 let acceptBtn = document.getElementById("acceptBtn");
 let cancelBtn = document.getElementById("cancelBtn");
+let cancelExporBtn = document.getElementById("cancelExporBtn");
 
 //Espero a boton de aceptar presionado
 acceptBtn.addEventListener('click', ()=>{
@@ -11,6 +13,13 @@ acceptBtn.addEventListener('click', ()=>{
 //Espero a boton de cancelar presionado
 cancelBtn.addEventListener('click', ()=>{
   modal.style.display = "none";
+});
+
+cancelExporBtn.addEventListener('click', (event)=>{
+  event.preventDefault()
+  formModal.style.display = "none";
+  // console.log(event)
+  // console.log('cerrado')
 });
 
 

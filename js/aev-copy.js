@@ -183,6 +183,10 @@ function sumLetters (array){
 
 showRestult()
 
+
+
+
+
 function showRestult() {
 	// console.log(answerYes)
 	
@@ -211,32 +215,77 @@ function showRestult() {
 		return Math.round((value * 100) / base)
 	}
 
-	document.getElementById('d-bar').value = calculatePercentage(result.D, 14);
-	document.getElementById('resultadoD').innerHTML = `${calculatePercentage(result.D, 14)}%`;
+	// document.getElementById('d-bar').value = calculatePercentage(result.D, 14);
+	// document.getElementById('resultadoD').innerHTML = `${calculatePercentage(result.D, 14)}%`;
+
+	let DiconProgressBar = document.querySelector('#D-icon-circular-progress');
+	let IiconProgressBar = document.querySelector('#I-icon-circular-progress');
+	let CiconProgressBar = document.querySelector('#C-icon-circular-progress');
+	let NiconProgressBar = document.querySelector('#N-icon-circular-progress');
+	let MiconProgressBar = document.querySelector('#M-icon-circular-progress');
+	let RiconProgressBar = document.querySelector('#R-icon-circular-progress');
+	let UiconProgressBar = document.querySelector('#U-icon-circular-progress');
+	let GiconProgressBar = document.querySelector('#G-icon-circular-progress');
+	let EiconProgressBar = document.querySelector('#E-icon-circular-progress');
+
+	iconIncreaseBar(DiconProgressBar, calculatePercentage(result.D, 14), result.D)
+	iconIncreaseBar(IiconProgressBar, calculatePercentage(result.I, 14), result.I)
+	iconIncreaseBar(CiconProgressBar, calculatePercentage(result.C, 10), result.C)
+	iconIncreaseBar(NiconProgressBar, calculatePercentage(result.N, 14), result.N)
+	iconIncreaseBar(MiconProgressBar, calculatePercentage(result.M, 10), result.M)
+	iconIncreaseBar(RiconProgressBar, calculatePercentage(result.R, 5), result.R)
+	iconIncreaseBar(UiconProgressBar, calculatePercentage(result.U, 8), result.U)
+	iconIncreaseBar(GiconProgressBar, calculatePercentage(result.G, 16), result.G)
+	iconIncreaseBar(EiconProgressBar, calculatePercentage(result.E, 7), result.E)
+
+	let DIconCircularProgressContainer = document.querySelector('#D-icon-circular-progress-container')
+	let IIconCircularProgressContainer = document.querySelector('#I-icon-circular-progress-container')
+	let CIconCircularProgressContainer = document.querySelector('#C-icon-circular-progress-container')
+	let NIconCircularProgressContainer = document.querySelector('#N-icon-circular-progress-container')
+	let MIconCircularProgressContainer = document.querySelector('#M-icon-circular-progress-container')
+	let RIconCircularProgressContainer = document.querySelector('#R-icon-circular-progress-container')
+	let UIconCircularProgressContainer = document.querySelector('#U-icon-circular-progress-container')
+	let GIconCircularProgressContainer = document.querySelector('#G-icon-circular-progress-container')
+	let EIconCircularProgressContainer = document.querySelector('#E-icon-circular-progress-container')
 	
-	document.getElementById('i-bar').value = calculatePercentage(result.I, 14);
-	document.getElementById('resultadoI').innerHTML = `${calculatePercentage(result.I, 14)}%`;
+	changeBarColors(result.D, DIconCircularProgressContainer)
+	changeBarColors(result.I, IIconCircularProgressContainer)
+	changeBarColors(result.C, CIconCircularProgressContainer)
+	changeBarColors(result.N, NIconCircularProgressContainer)
+	changeBarColors(result.M, MIconCircularProgressContainer)
+	changeBarColors(result.R, RIconCircularProgressContainer)
+	changeBarColors(result.U, UIconCircularProgressContainer)
+	changeBarColors(result.G, GIconCircularProgressContainer)
+	changeBarColors(result.E, EIconCircularProgressContainer)
 
-	document.getElementById('c-bar').value = calculatePercentage(result.C, 10);
-	document.getElementById('resultadoC').innerHTML = `${calculatePercentage(result.C, 10)}%`;
 
-	document.getElementById('n-bar').value = calculatePercentage(result.N, 14);
-	document.getElementById('resultadoN').innerHTML = `${calculatePercentage(result.N, 14)}%`;
 
-	document.getElementById('m-bar').value = calculatePercentage(result.M, 10);
-	document.getElementById('resultadoM').innerHTML = `${calculatePercentage(result.M, 10)}%`;
 
-	document.getElementById('r-bar').value = calculatePercentage(result.R, 5);
-	document.getElementById('resultadoR').innerHTML = `${calculatePercentage(result.R, 5)}%`;
 
-	document.getElementById('u-bar').value = calculatePercentage(result.U, 8);
-	document.getElementById('resultadoU').innerHTML = `${calculatePercentage(result.U, 8)}%`;
 
-	document.getElementById('g-bar').value = calculatePercentage(result.G, 16);
-	document.getElementById('resultadoG').innerHTML = `${calculatePercentage(result.G, 16)}%`;
+	// document.getElementById('i-bar').value = calculatePercentage(result.I, 14);
+	// document.getElementById('resultadoI').innerHTML = `${calculatePercentage(result.I, 14)}%`;
 
-	document.getElementById('e-bar').value = calculatePercentage(result.E,7);
-	document.getElementById('resultadoE').innerHTML = `${calculatePercentage(result.E, 7)}%`;
+	// document.getElementById('c-bar').value = calculatePercentage(result.C, 10);
+	// document.getElementById('resultadoC').innerHTML = `${calculatePercentage(result.C, 10)}%`;
+
+	// document.getElementById('n-bar').value = calculatePercentage(result.N, 14);
+	// document.getElementById('resultadoN').innerHTML = `${calculatePercentage(result.N, 14)}%`;
+
+	// document.getElementById('m-bar').value = calculatePercentage(result.M, 10);
+	// document.getElementById('resultadoM').innerHTML = `${calculatePercentage(result.M, 10)}%`;
+
+	// document.getElementById('r-bar').value = calculatePercentage(result.R, 5);
+	// document.getElementById('resultadoR').innerHTML = `${calculatePercentage(result.R, 5)}%`;
+
+	// document.getElementById('u-bar').value = calculatePercentage(result.U, 8);
+	// document.getElementById('resultadoU').innerHTML = `${calculatePercentage(result.U, 8)}%`;
+
+	// document.getElementById('g-bar').value = calculatePercentage(result.G, 16);
+	// document.getElementById('resultadoG').innerHTML = `${calculatePercentage(result.G, 16)}%`;
+
+	// document.getElementById('e-bar').value = calculatePercentage(result.E,7);
+	// document.getElementById('resultadoE').innerHTML = `${calculatePercentage(result.E, 7)}%`;
 
 	// document.getElementById('resultadoI').innerHTML = calculateResultInWords(result.I);
 	// document.getElementById('resultadoC').innerHTML = calculateResultInWords(result.C);
@@ -258,27 +307,27 @@ function showRestult() {
 	// document.getElementById('estructural').innerText = `ESTRUCTURAL: ${result.E}`
 
 
-	changeBarColors(result.D, document.getElementById('d-bar'))
-	changeBarColors(result.I, document.getElementById('i-bar'))
-	changeBarColors(result.C, document.getElementById('c-bar'))
-	changeBarColors(result.N, document.getElementById('n-bar'))
-	changeBarColors(result.M, document.getElementById('m-bar'))
-	changeBarColors(result.R, document.getElementById('r-bar'))
-	changeBarColors(result.U, document.getElementById('u-bar'))
-	changeBarColors(result.G, document.getElementById('g-bar'))
-	changeBarColors(result.E, document.getElementById('e-bar'))
+	// changeBarColors(result.D, document.getElementById('d-bar'))
+	// changeBarColors(result.I, document.getElementById('i-bar'))
+	// changeBarColors(result.C, document.getElementById('c-bar'))
+	// changeBarColors(result.N, document.getElementById('n-bar'))
+	// changeBarColors(result.M, document.getElementById('m-bar'))
+	// changeBarColors(result.R, document.getElementById('r-bar'))
+	// changeBarColors(result.U, document.getElementById('u-bar'))
+	// changeBarColors(result.G, document.getElementById('g-bar'))
+	// changeBarColors(result.E, document.getElementById('e-bar'))
 
-	changeNumberColor(calculatePercentage(result.D, 14), document.getElementById('resultadoD'))
-	changeNumberColor(calculatePercentage(result.I, 14), document.getElementById('resultadoI'))
-	changeNumberColor(calculatePercentage(result.C, 10), document.getElementById('resultadoC'))
-	changeNumberColor(calculatePercentage(result.N, 14), document.getElementById('resultadoN'))
-	changeNumberColor(calculatePercentage(result.M, 10), document.getElementById('resultadoM'))
-	changeNumberColor(calculatePercentage(result.R, 5), document.getElementById('resultadoR'))
-	changeNumberColor(calculatePercentage(result.U, 8), document.getElementById('resultadoU'))
-	changeNumberColor(calculatePercentage(result.G, 16), document.getElementById('resultadoG'))
-	changeNumberColor(calculatePercentage(result.E, 7), document.getElementById('resultadoE'))
+	// changeNumberColor(calculatePercentage(result.D, 14), document.getElementById('resultadoD'))
+	// changeNumberColor(calculatePercentage(result.I, 14), document.getElementById('resultadoI'))
+	// changeNumberColor(calculatePercentage(result.C, 10), document.getElementById('resultadoC'))
+	// changeNumberColor(calculatePercentage(result.N, 14), document.getElementById('resultadoN'))
+	// changeNumberColor(calculatePercentage(result.M, 10), document.getElementById('resultadoM'))
+	// changeNumberColor(calculatePercentage(result.R, 5), document.getElementById('resultadoR'))
+	// changeNumberColor(calculatePercentage(result.U, 8), document.getElementById('resultadoU'))
+	// changeNumberColor(calculatePercentage(result.G, 16), document.getElementById('resultadoG'))
+	// changeNumberColor(calculatePercentage(result.E, 7), document.getElementById('resultadoE'))
 }
-/*
+
 function calculateResultInWords(number){
 	
 	if(number>=0 && number<=1){
@@ -294,33 +343,83 @@ function calculateResultInWords(number){
 		return "Mala Salud"
 	}
 }
-*/
 
-function changeNumberColor(percentage, element){
-	// console.log(percentage)
-	if(percentage>=90){
-		element.style.setProperty("--sdcolor", "#F7F8FA")
-	}
-}
+
+// function changeNumberColor(percentage, element){
+// 	// console.log(percentage)
+// 	if(percentage>=90){
+// 		element.style.setProperty("--sdcolor", "#F7F8FA")
+// 	}
+// }
 
 
 function changeBarColors(number, element){	
 	if(number>=0 && number<=1){
-		element.style.setProperty("--c", "#3AB549")
+
+		element.style.backgroundColor= "#80BD96";
+		element.style.boxShadow= "0 0 10px #80BD96";
+		let fondoInterno = element.firstElementChild.firstElementChild;
+		fondoInterno.style.backgroundColor= "#80BD96";
+
 	}else if(number>=2 && number<=3){
-		element.style.setProperty("--c", "#FED140")
+
+		element.style.backgroundColor= "#FED140";
+		element.style.boxShadow= "0 0 10px #FED140";
+		let fondoInterno = element.firstElementChild.firstElementChild;
+		fondoInterno.style.backgroundColor= "#FED140";
+
 	}else if(number>=4 && number<=5){
-		element.style.setProperty("--c", "#f7941d")
+
+		element.style.backgroundColor= "#f7941d";
+		element.style.boxShadow= "0 0 10px #f7941d";
+		let fondoInterno = element.firstElementChild.firstElementChild;
+		fondoInterno.style.backgroundColor= "#f7941d";
+
 	}else if(number>=6 ){
-		element.style.setProperty("--c", "#ED1B24")
+
+		element.style.backgroundColor= "#ED1B24";
+		element.style.boxShadow= "0 0 10px #ED1B24";
+		let fondoInterno = element.firstElementChild.firstElementChild;
+		fondoInterno.style.backgroundColor= "#ED1B24";
+
 	}
 }
+
+
+function iconIncreaseBar(element, porcentage,number){
+	if(number>=0 && number<=1){
+		element.style.background = `conic-gradient(#fff ${porcentage*3.6}deg, #80BD96 ${porcentage*3.6}deg)`;
+	}else if(number>=2 && number<=3){
+		element.style.background = `conic-gradient(#fff ${porcentage*3.6}deg, #FED140 ${porcentage*3.6}deg)`;
+	}else if(number>=4 && number<=5){
+		element.style.background = `conic-gradient(#fff ${porcentage*3.6}deg, #f7941d ${porcentage*3.6}deg)`;
+	}else if(number>=6 ){
+		element.style.background = `conic-gradient(#fff ${porcentage*3.6}deg, #ED1B24 ${porcentage*3.6}deg)`;
+	}
+}
+
+
+// function iconIncreaseBar(element, porcentage,number){
+// 	if(porcentage>=0 && porcentage<=24){
+// 		element.style.background = `conic-gradient(#fff ${porcentage*3.6}deg, #80BD96 ${porcentage*3.6}deg)`;
+// 	}else if(porcentage>=25 && porcentage<=49){
+// 		element.style.background = `conic-gradient(#fff ${porcentage*3.6}deg, #FED140 ${porcentage*3.6}deg)`;
+// 	}else if(porcentage>=50 && porcentage<=74){
+// 		element.style.background = `conic-gradient(#fff ${porcentage*3.6}deg, #f7941d ${porcentage*3.6}deg)`;
+// 	}else if(porcentage>=75 ){
+// 		element.style.background = `conic-gradient(#fff ${porcentage*3.6}deg, #ED1B24 ${porcentage*3.6}deg)`;
+// 	}
+// }
+
+// function iconIncreaseBar(element, porcentage, color){
+// 	element.style.background = `conic-gradient(#fff ${porcentage*3.6}deg, ${color} ${porcentage*3.6}deg)`;
+// }
 
 // MODALES
 
 // Modal de resultado
-// let resultBtn = document.getElementById('resultBtn');
-// let accepResultBtn = document.getElementById("accepResultBtn");
+// let resultBtn = document.getElementById('exportBtn');
+let accepResultBtn = document.getElementById("accepResultBtn");
 
 // resultBtn.addEventListener('click', ()=>{
 // 	if(answerCounter.length == 38){
@@ -336,11 +435,74 @@ accepResultBtn.addEventListener('click', ()=>{
 	resultModal.style.display = "none";
 });
 
+
+
 // Modal Exportar
 let exportBtn = document.getElementById('exportBtn');
+
+let botonDescargar = document.getElementById('descargarBtn');
+let nombreError = document.getElementById('nombreError')
+let emailError = document.getElementById('emailError')
+let inputName = document.getElementById('inputName')
+let inputEmail = document.getElementById('inputEmail')
+let radioHombre = document.getElementById('hombre')
+
+let genero;
+
 exportBtn.addEventListener('click', ()=>{
-	if(answerCounter.length == 38){
-		exportarPDF()
+	if(answerCounter.length >= 1){
+		let formModal = document.getElementById('formModal');
+		formModal.style.display = "block";
+
+
+		
+		
+
+		botonDescargar.addEventListener('click', (event)=>{
+			event.preventDefault();
+			// console.log(event)
+			if( validateEmpty(inputName.value, inputName, nombreError, 'Nombre') && validateEmpty(inputEmail.value, inputEmail, emailError, 'Email') == true){
+				console.log('Nombre: '+ inputName.value)
+				console.log('Correo: '+ inputEmail.value)
+
+				
+				if(radioHombre.checked == true){
+					genero = 'Hombre'
+				}else{
+					genero = 'Mujer'
+				}
+
+				console.log("Genero: " + genero);
+
+				formModal.style.display = "none";
+				exportarPDF()
+			}
+		});
+
+		function validateEmpty(valueInput, divInput, divError, nameInput){
+			if(valueInput.length == 0){
+				showError(divInput, divError, `${nameInput} no puede estar vacío`);
+				return false;
+			}else{
+				hideError(divInput, divError);
+				return true;
+			}
+		}
+
+		function showError(divInput, divError, error){
+			divInput.style.border = ' 1px solid red';
+			divError.innerHTML = `<p class="error">${error}</p>`
+		}
+		
+		function hideError(divInput, divError){
+			divInput.style.border = ' 1px solid hsl(246, 25%, 77%)';
+			divError.innerHTML = ``
+		}
+
+
+
+
+		
 	}else{
 		let resultModal = document.getElementById('resultModal');
 		resultModal.style.display = "block";
@@ -368,6 +530,7 @@ function exportarPDF(){
 	doc.text('RESULTADOS:', 20, 40);
 
 	//Agrego texto con variables
+	doc.setFontSize(12)
 	doc.text(`Digestivo: ${calculateResultInWords(result.D)}`, 20, 60);
 	doc.text(`Intestinal: ${calculateResultInWords(result.I)}`, 20, 70);
 	doc.text(`Circulatorio: ${calculateResultInWords(result.C)}`, 20, 80);
@@ -378,13 +541,23 @@ function exportarPDF(){
 	doc.text(`Glandular: ${calculateResultInWords(result.G)}`, 20, 130);
 	doc.text(`Estructural: ${calculateResultInWords(result.E)}`, 20, 140);
 
+	//Nombre
+	
+	doc.text(`Nombre: ${inputName.value}`, 20, 160);
+	doc.text(`Correo: ${inputEmail.value}`, 20, 170);
+	doc.text(`Género: ${genero}`, 20, 180);
+
+	//Correo
+
+	// Genero
+
 	//Fecha
 	let actualDate = new Date()
 	let months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
 	let dateString = `${actualDate.getDate()}/${months[actualDate.getMonth()]}/${actualDate.getFullYear()}`
 
 	doc.setFontSize(10)
-	doc.text(`Fecha: ${dateString}`, 150, 170);
+	doc.text(`Fecha: ${dateString}`, 150, 190);
 
 	//Guardo documento
 	doc.save("Natures_Sunshine_Report.pdf");

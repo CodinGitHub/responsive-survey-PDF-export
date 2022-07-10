@@ -13,10 +13,14 @@
   --radio-buttons: #8F959B;
   --letters: #003b4d;
   --lines: #CACECF;
-  --very-good: #3AB549;
+
+
+  --very-good: #80BD96;
   --good: #FED140;
   --regular: #f7941d;
   --bad: #ED1B24;
+
+
   --sdcolor:#003b4d;
 }
 body {
@@ -38,8 +42,8 @@ body {
   box-shadow: 3px 3px 10px var(--lines);
   width: 300px;
   font-size: 0.8em;
-  min-height: 400px;
-  max-height: 640px;
+  min-height: 600px;
+  max-height: 720px;
   position: sticky;
   top: 0;
 }
@@ -56,6 +60,8 @@ body {
 .result-container{
   padding: 20px 30px;
   line-height: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .main-section{
   border-radius: 24px;
@@ -299,7 +305,7 @@ progress[value]::-webkit-progress-value {
   display: flex;
   height: 17px;
   position: relative;
-  margin: -5px 0 5px;
+  /* margin: -5px 0 5px 20px; */
 }
 .sidebar-resultado{
   position: absolute;
@@ -334,6 +340,65 @@ progress[value]::-webkit-progress-value {
 .bad{
   background-color: var(--bad);
   color: var(--survey-background);
+}
+
+/*------------------------------------------------PRUEBA ICONOS CAMBIAN DE COLOR----------------------------------------*/
+.icon-circular-progress-container{
+  width: 80px;
+  height: 80px;
+  background-color: #80BD96;
+  border-radius: 50%;
+  box-shadow:  0 0 20px #80BD96 ;
+  display: grid;
+  gap: 10px;
+  place-items: center;
+  margin: auto;
+}
+.side-report{
+  /* border: 1px solid red; */
+  /* width: 100px; */
+  height: 110px;
+  text-align: center;
+}
+.icon-circular-progress{
+  position: relative;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  margin-bottom: 0;
+  background-color: var(--survey-background);
+  display: grid;
+  place-items: center;
+} 
+.icon-value-container{
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background-color: #80BD96;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 18px;
+} 
+/* #formModal{
+  display: block;
+} */
+
+input[type="text"], input[type="email"]{
+  width: 95%;
+  height: 30px;
+  margin: 10px 0;
+  padding-left: 10px;
+}
+.error{
+  color: red;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: -5px;
+}
+.radio-container{
+  margin: 10px;
+  font-size: 14px;
 }
 /*---------------------Responsivo--------------------------------------*/
 @media (max-width: 1100px){
@@ -376,7 +441,7 @@ progress[value]::-webkit-progress-value {
   }
   #prrogress-bar[value]::-webkit-progress-value {
     background-color: var(--main);
-  } */
+  } 
 }
 
 @media (max-width: 920px){
@@ -389,12 +454,17 @@ progress[value]::-webkit-progress-value {
   .sidebar{
     width: 100%;
     margin: 0 auto;
-    max-height: 700px;
-    height: 650px;
+    /* max-height: 600px; */
+    /* height: 30 0px; */
+    min-height: 500px;
   }
   label{
     font-size: 0.9em; 
     margin-right: 0px;
+  }
+  .result-container{
+    grid-template-columns: 1fr 1fr 1fr;
+    /* background-color: red; */
   }
 }
 
@@ -444,6 +514,12 @@ progress[value]::-webkit-progress-value {
   .radio-buttons-container{
     flex: 3;
   }
+  .result-container{
+    height: 588px;
+  }
+  .result-container{
+    grid-template-columns: 1fr 1fr;
+  }
   
   .single-radio-buttons-container{
     /* display: flex; */
@@ -470,5 +546,8 @@ progress[value]::-webkit-progress-value {
   .separador{
     margin-right: -10px;
     margin-left: 5px;
+  }
+  .sidebar{
+    min-height: 730px;
   }
 }
